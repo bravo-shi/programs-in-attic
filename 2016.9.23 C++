@@ -1,0 +1,63 @@
+
+#include<iostream>
+
+int main() {
+	std::cout << "ATTIC最棒了！≥w≤" << "\a" << std::endl;
+	getchar();
+	return 0;
+}
+
+
+
+
+
+
+
+
+#include<iostream>
+#include<Windows.h>//OS X的同学不用这一条
+using namespace std;
+int main() {
+	int a, b;
+	cout << "enter the number of a" << endl;
+	cin >> a;// cin>>a>>b>>c； 是可以的
+	cout << "enter the number of b" << endl;
+	cin >> b;
+	cout << "the sum of a and b is " << a + b << endl;
+	system("pause");//OS X的同学用getchar();哦
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+#include<iostream>
+#include<Windows.h>
+int main() {
+	std::cout << "hello world!" << std::endl;
+	system("pause");
+	return 0;
+}
+
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+int main() {
+	int i = 0;
+	cout << "enter the number of i" << endl;
+	cin >> i;
+	cout << i << endl;
+	getchar();
+	return 0;
+}
