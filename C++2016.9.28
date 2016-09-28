@@ -1,0 +1,53 @@
+/*
+*我
+*都是
+*为了你们
+*做的这个视频
+*写了这个程序
+*我
+*就是
+*这么走心
+*ATTIC
+*就是走心
+*/
+
+#include<iostream>//包含头文件iostream
+#include<Windows.h>//包含头文件Windows.h
+#include<math.h>
+using namespace std;//运用命名空间std
+//定义一个函数main
+int main() {
+	int i = 0;
+	cout << "enter the value of i" << endl;
+	cin >> i;
+	if (i > 0) {
+		cout << "我屁股吸多了" << endl;
+	}
+	else if (i == 0) {
+		cout << "守望先锋有毒" << endl;
+	}
+	else if (i < 0) {
+		cout << "我不想被送去电击，请放过我吧，暴雪爸爸" << endl;
+	}
+	//因为忘记保存了 所以是新加的，大家凑合一下啊
+	while () {
+
+	}
+	for (;;) {
+
+	}
+wink:main();
+	return 0;//返回值0
+}
+
+/*
+*bool
+*char
+*int
+*long
+*long long
+*float
+*double float
+*long double float
+*string
+*/
