@@ -1,0 +1,17 @@
+String str="";  //定义缓冲区
+char c=0;
+void setup(){
+  Serial.begin(9600);  //打开串口
+}
+void loop(){
+  while(Serial.available()>0){  //检测是否有数据
+    c = Serial.read();  //读取数据
+    str+=c;  //存入缓冲区
+    delay(30);
+  }
+  if(str.length()>0){  //检测缓冲区是否为空
+    Serial.print("Receive: ");
+    Serial.println(str);  //打印缓冲区数据
+    str="";  //清空缓冲区
+  }
+}
