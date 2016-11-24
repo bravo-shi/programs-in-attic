@@ -1,0 +1,70 @@
+
+/*
+#include "dht.h"  //包含库文件
+dht DHT;  //定义一个DHT对象
+const int Sensor = A0;  // 引脚定义:
+void setup() {
+  pinMode(Sensor,INPUT);  // 初始化传感器为输入模式
+  Serial.begin(9600);    //打开串口
+}
+int chk;  //传感器状态
+void loop() {
+  chk = DHT.read11(Sensor); //读取传感器状态
+  switch (chk){  
+    case 0:  Serial.println("OK"); break;  
+    case -1: Serial.println("Checksum error"); break;  
+    case -2: Serial.println("Time out error"); break;  
+    default: Serial.println("Unknown errort"); break;  
+  }
+  Serial.print("Humidity (%): ");  //输出读取值
+  Serial.println(DHT.humidity,1);  
+  Serial.print("Temperature (C): ");
+  Serial.println(DHT.temperature,1);
+  Serial.println();
+  delay(1000);
+}
+*/
+
+#include <dht.h>
+dht DHT;
+#define DHT11_PIN A0
+void setup(){
+  Serial.begin(115200); 
+  Serial.println("DHT TEST PROGRAM "); 
+  Serial.print("LIBRARY VERSION: ");     
+  Serial.println(DHT_LIB_VERSION); 
+  Serial.println(); 
+  Serial.println("Type,\tstatus,\tHumidity (%),\tTemperature (C)");
+}
+
+void loop(){ 
+  Serial.print("DHT11, \t"); 
+  int chk = DHT.read11(DHT11_PIN); 
+  switch (chk){ 
+    case DHTLIB_OK: 
+                  Serial.print("OK,\t"); 
+                  break;
+    case DHTLIB_ERROR_CHECKSUM: 
+                  Serial.print("Checksum error,\t"); 
+                  break;
+    case DHTLIB_ERROR_TIMEOUT: 
+                  Serial.print("Time out error,\t"); 
+                  break; 
+    case DHTLIB_ERROR_CONNECT: 
+                  Serial.print("Connect error,\t"); 
+                  break; 
+    case DHTLIB_ERROR_ACK_L: 
+                  Serial.print("Ack Low error,\t"); 
+                  break;
+    case DHTLIB_ERROR_ACK_H: 
+                  Serial.print("Ack High error,\t"); 
+                  break; 
+    default:  Serial.print("Unknown error,\t"); 
+                  break; 
+    }
+// DISPLAY DATA 
+  Serial.print(DHT.humidity, 1); 
+  Serial.print(",\t"); 
+  Serial.println(DHT.temperature, 1); 
+  delay(2000);
+}
