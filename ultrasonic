@@ -1,0 +1,14 @@
+#include "SR04.h"  //包含库文件
+#define TRIG_PIN 4  // 引脚定义:
+#define ECHO_PIN 7
+SR04 sr04 = SR04(ECHO_PIN,TRIG_PIN);  //定义对象
+void setup() {
+   Serial.begin(9600);  //打开串口
+}
+long dist;  //距离值变量
+void loop() {
+   dist=sr04.Distance();  //读取距离
+   Serial.print(dist);
+   Serial.println("cm");
+   delay(1000);
+}
