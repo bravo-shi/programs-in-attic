@@ -1,0 +1,26 @@
+const int light = A0;
+const int B = 10;
+const int G = 11;
+const int R = 9;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(A0,INPUT);
+  pinMode(10,OUTPUT);
+  pinMode(11,OUTPUT);
+  pinMode(9,OUTPUT);
+  Serial.begin(9600);
+}
+
+int lightOn(int color){
+    digitalWrite(R, color==R); 
+    digitalWrite(G, color==G);
+    digitalWrite(B, color==B);
+}
+
+int sensorVal = 0;
+void loop() {
+  // put your main code here, to run repeatedly:
+  Serial.println(sensorVal = analogRead(light));
+  lightOn(sensorVal<100?0: sensorVal<300?R: sensorVal<500?G: B); 
+}
